@@ -1,4 +1,5 @@
 project:
   - name: Nebula
   - banner: ./banner.txt
+  - welcome: "Welcome to the Nebula project! Let's get you set up."
 steps: ./steps.yaml
