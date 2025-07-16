@@ -1,11 +1,10 @@
 # Nebula
 
-Nebula is a lightweight, modular task orchestration engine for managing distributed workflows in Python. Whether you're automating your personal projects or building a microservice pipeline, Nebula makes it easy to define, run, and monitor tasks across your system.
+Nebula is a lightweight app
 
 > **Tagline:** *Build workflows that scale like the stars.*
 
 ---
-
 ## ✨ Features
 
 - 🔧 YAML or Python-based workflow definitions  
@@ -16,36 +15,53 @@ Nebula is a lightweight, modular task orchestration engine for managing distribu
 - 🔐 Secrets management using environment or Vault  
 
 ---
-
-
 ## 🚀 Getting Started
 
-### Prerequisites
+## Prerequisites
 
-- Python 3.8+
-- Docker (optional)
-- Redis (for task queue backend)
-
-### Installation
-
-```bash
-pip install nebulaforge
-
-# Example
+Make sure that you have `uv` installed
 
 ```
-from nebula import Task, Workflow
-
-@Task(name="greet")
-def greet(name: str):
-    print(f"Hello, {name}!")
-
-wf = Workflow("morning-routine")
-wf.add_task("greet", args=["Alice"])
-wf.run()
+pipx install uv
 ```
 
-# CLI Usage
+or via homebrew (on macOS):
+```
+brew install astral-sh/uv/uv
+```
 
-nebulaforge run workflow.yaml
+Make sure that you have Python 3.8+ installed
+## Setup Instructions
 
+### 1. Create and Activate Virtual Environment
+
+For macOS and Linux
+```
+uv venv
+source .venv/bin/activate
+```
+
+For Windows
+```
+uv venv
+.venv\Scripts\activate
+```
+### 2. Install project dependencies
+
+```
+uv sync
+```
+### 3. Run the project
+
+`uv run main.py`
+## Project Structure
+
+```
+nebula/
+├── README.md
+├── pyproject.toml
+├── main.py
+├── tests/
+│   └── test_main.py
+├── .gitignore
+```
