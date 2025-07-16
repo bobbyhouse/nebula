@@ -1,0 +1,4 @@
+project:
+  - name: Nebula
+  - banner: ./banner.txt
+steps: ./steps.yaml
